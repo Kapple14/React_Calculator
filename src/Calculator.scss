@@ -1,0 +1,165 @@
+@import './colors.scss';
+@mixin CardBox($CardColor, $CardOpacity)
+{
+    background: rgba($color: $CardColor, $alpha: $CardOpacity);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.CalculatorApp
+{
+    height: fit-content;
+    width: 15rem;
+    min-width: fit-content;
+    border-radius: 16px;
+    font-weight: 100;
+    padding: 0.5rem;
+    background: $CalculatorBackground;
+    box-shadow: 49px 74px 369px -1px rgba(3,10,4,0.38);
+}
+
+.CalculatorApp
+button
+{
+    cursor: pointer;
+}
+
+.display
+{
+    background: rgba($color: $DisplayColor, $alpha: 1);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    border-radius: 8px;
+    color: white;
+    min-height: 4rem;
+    min-width: fit-content;
+    font-size: 3rem;
+}
+
+.calculatorToolBox
+{
+    min-width: inherit;
+    display: inline-grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 20% 80%;
+    min-width: 100%;
+    min-height: 15rem;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.calculatorAdditionalKeys
+{ 
+    display: inline-grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    min-width: 100%;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.calculatorAdditionalKeys
+button
+{
+    border: none;
+    background: rgba($color: $CalculatorAdditionalKeyColor, $alpha: $ButtonOpacity);
+    border-right: 0.5px solid $AntiFlashWhite;
+    border-bottom: 0.5px solid $AntiFlashWhite;
+    color: $AntiFlashWhite;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.calculatorAdditionalKeys
+button:hover
+{
+    background: rgba($color: $CalculatorAdditionalKeyColor, $alpha: 1.0);
+}
+
+.calculatorNumbers
+{
+    padding: 0;
+    display: inline-grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    min-width: 100%;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.calculatorNumbers
+button
+{
+    border: none;
+    border-right: 0.5px solid $AntiFlashWhite;
+    border-bottom: 0.5px solid $AntiFlashWhite;
+    background-color: rgba($color: $CalculatorNumberColor, $alpha: $ButtonOpacity);
+    color: $AntiFlashWhite;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: inherit;
+}
+
+.calculatorNumbers
+button:hover
+{
+    background: rgba($color: $CalculatorNumberColor, $alpha: 1);
+    color: $AntiFlashWhite;
+    min-width: 100%;
+}
+
+#ButtonOfValue0
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#ButtonOfValueComma.active
+{
+    background: rgba($color: $Black, $alpha: 1.0);
+}
+
+.calculatorTools
+{
+    padding: 0;
+    display: inline-grid;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.calculatorTools
+button
+{
+    border: none;
+    border-bottom: 0.5px solid $AntiFlashWhite;
+    background: rgba($color: $ToolButtonColor, $alpha: $ButtonOpacity);
+    color: $AntiFlashWhite;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: inherit;
+}
+
+.calculatorTools
+button:hover
+{
+    background-color: rgba($color: $ToolButtonColor, $alpha: 1.0);
+}
+
+.calculatorTools
+button.active
+{
+    background-color: rgba($color: $ToolButtonColor, $alpha: 0.8);
+}
+
+.calculatorTools
+button:last-child,
+.calculatorNumbers
+button:last-child,
+.calculatorNumbers
+button:nth-last-child(2)
+{
+    border-bottom: none;
+}

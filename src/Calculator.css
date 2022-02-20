@@ -1,0 +1,164 @@
+.CalculatorApp {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 15rem;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  border-radius: 16px;
+  font-weight: 100;
+  padding: 0.5rem;
+  background: #fad5b3;
+  -webkit-box-shadow: 49px 74px 369px -1px rgba(3, 10, 4, 0.38);
+          box-shadow: 49px 74px 369px -1px rgba(3, 10, 4, 0.38);
+}
+
+.CalculatorApp
+button {
+  cursor: pointer;
+}
+
+.display {
+  background: #030a04;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  min-height: 4rem;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  font-size: 3rem;
+}
+
+.calculatorToolBox {
+  min-width: inherit;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 75% 25%;
+      grid-template-columns: 75% 25%;
+  -ms-grid-rows: 20% 80%;
+      grid-template-rows: 20% 80%;
+  min-width: 100%;
+  min-height: 15rem;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.calculatorAdditionalKeys {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 33.3% 33.3% 33.3%;
+      grid-template-columns: 33.3% 33.3% 33.3%;
+  min-width: 100%;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.calculatorAdditionalKeys
+button {
+  border: none;
+  background: rgba(3, 10, 4, 0.8);
+  border-right: 0.5px solid white;
+  border-bottom: 0.5px solid white;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.calculatorAdditionalKeys
+button:hover {
+  background: #030a04;
+}
+
+.calculatorNumbers {
+  padding: 0;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 33.3% 33.3% 33.3%;
+      grid-template-columns: 33.3% 33.3% 33.3%;
+  min-width: 100%;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.calculatorNumbers
+button {
+  border: none;
+  border-right: 0.5px solid white;
+  border-bottom: 0.5px solid white;
+  background-color: rgba(66, 66, 66, 0.8);
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.calculatorNumbers
+button:hover {
+  background: #424242;
+  color: white;
+  min-width: 100%;
+}
+
+#ButtonOfValue0 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#ButtonOfValueComma.active {
+  background: #030a04;
+}
+
+.calculatorTools {
+  padding: 0;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.calculatorTools
+button {
+  border: none;
+  border-bottom: 0.5px solid white;
+  background: rgba(255, 133, 18, 0.8);
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.calculatorTools
+button:hover {
+  background-color: #ff8512;
+}
+
+.calculatorTools
+button.active {
+  background-color: rgba(255, 133, 18, 0.8);
+}
+
+.calculatorTools
+button:last-child,
+.calculatorNumbers
+button:last-child,
+.calculatorNumbers
+button:nth-last-child(2) {
+  border-bottom: none;
+}
+/*# sourceMappingURL=Calculator.css.map */
