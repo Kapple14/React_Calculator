@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import '../../colors.scss';
 @mixin CardBox($CardColor, $CardOpacity)
 {
     background: rgba($color: $CardColor, $alpha: $CardOpacity);
@@ -8,16 +8,31 @@
     -webkit-backdrop-filter: blur(5px);
 }
 
+$Aquamarine: #3B707D;
+$Orange: #fad5b3;
+$RedOrange: #ff8512;
+$Black: $VSCodeBlack;
+$Gray: #535353;
+$AntiFlashWhite: white;
+
+$CalculatorBackground: $Orange;
+$DisplayColor: $Black;
+$CalculatorAdditionalKeyColor: $Black;
+$CalculatorNumberColor: $Gray;
+$ToolButtonColor: $RedOrange;
+
+$ButtonOpacity: 0.8;
+$ButtonOpacityHover: 1;
+
 .CalculatorApp
 {
     height: fit-content;
-    width: 15rem;
     min-width: fit-content;
+    width: 20rem;
     border-radius: 16px;
     font-weight: 100;
-    padding: 0.5rem;
-    background: $CalculatorBackground;
-    box-shadow: 49px 74px 369px -1px rgba(3,10,4,0.38);
+    padding: 1rem;
+    box-shadow: 10px 10px 170px -50px rgba($color: $VSCodeBlack, $alpha: 0.8);
 }
 
 .CalculatorApp
@@ -36,13 +51,11 @@ button
     border-radius: 8px;
     color: white;
     min-height: 4rem;
-    min-width: fit-content;
     font-size: 3rem;
 }
 
 .calculatorToolBox
 {
-    min-width: inherit;
     display: inline-grid;
     grid-template-columns: 75% 25%;
     grid-template-rows: 20% 80%;
@@ -162,4 +175,87 @@ button:last-child,
 button:nth-last-child(2)
 {
     border-bottom: none;
+}
+
+@media (max-width:900px) 
+{
+
+    .CalculatorApp
+    {
+        height: fit-content;
+        width: fit-content;
+        min-height: fit-content;
+        min-width: fit-content;
+
+    }
+
+    .calculatorToolBox
+    {
+        min-width: 100%;
+        display: grid;
+        grid-template-rows: 4.5rem 4.5rem 4.5rem 4.5rem 4.5rem;
+        grid-template-columns: 15rem 5rem;
+        grid-gap: 1rem 0rem;
+        margin-top: 1rem;
+        max-width: none;
+        max-height: none;
+    }
+
+    .calculatorNumbers
+    {
+        grid-template-rows: 4.5rem 4.5rem 4.5rem 4.5rem;
+        grid-gap: 1rem 0rem;
+    }
+
+    .calculatorTools
+    {
+        grid-template-rows: 4.5rem 4.5rem 4.5rem 4.5rem;
+        grid-gap: 1rem 0rem;
+    }
+
+    .calculatorNumbers
+    button,
+    .calculatorTools
+    button,
+    .calculatorAdditionalKeys
+    button
+    {
+        border: none;
+        display: flex;
+        border-radius: 50%;
+        height: 4.5rem;
+        width: 4.5rem;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+
+        min-width: none;
+        min-height: none;
+    }
+
+    .calculatorNumbers
+    button:hover,
+    .calculatorTools
+    button:hover,
+    .calculatorAdditionalKeys
+    button:hover
+    {
+        border: none;
+        min-height: fit-content;
+        min-width: fit-content;
+        border-radius: 50%;
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+
+    #ButtonOfValue0
+    {
+        width: 9rem;
+        height: 4.5rem;
+        border-radius: 4rem;
+        margin: auto;
+        justify-content: flex-start;
+        padding-left: 2rem;
+    }
+
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactSlider from 'react-slider';
 import './Calculator.css';
 
 class Calculator extends React.Component
@@ -15,7 +16,7 @@ class Calculator extends React.Component
                   operation: '',
                   calculated: true,
                   resetButton:'AC',
-                  calculationNumbers:[7,8,9,4,5,6,1,2,3,0]
+                  calculationNumbers:[...Array(10).keys()].reverse()
                 };
     
     this.enter = this.enter.bind(this);
@@ -44,7 +45,9 @@ class Calculator extends React.Component
 
   inputChange(e)
   {
+  
       this.setState({currentDisplay:this.state.currentValue + e.target.value, currentValue: this.state.currentValue + e.target.value})
+
   }
 
   commaClicked()
@@ -132,7 +135,7 @@ class Calculator extends React.Component
   {
     return(
         <div className='CalculatorApp'>
-          <div className='display'>{Number(this.state.currentDisplay)}</div>
+          <div className='display'>{(Number(this.state.currentDisplay)<100000000)? Number(this.state.currentDisplay).toLocaleString('de-DE',{maximumSignificantDigits:10}): Number(this.state.currentDisplay).toExponential(5)}</div>
           <div className='calculatorToolBox'>
             <div className='calculatorAdditionalKeys'>
               <button onClick={this.resetInput}>{this.state.resetButton}</button>
